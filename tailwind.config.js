@@ -1,5 +1,6 @@
 module.exports = {
   content: ['index.html'],
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
@@ -7,7 +8,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        violet: '#7c3aed',
+        violet: '#8b5cf6',
         hitam: '#171717',
       },
       screen: {

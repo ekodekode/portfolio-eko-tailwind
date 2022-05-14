@@ -1,43 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio eko</title>
     <link rel="icon" href="favicon.ico" />
+    <script>
+     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+    </script>
     <link href="./dist/output.css" rel="stylesheet" />
   </head>
   <body>
     <!-- header awal -->
 
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
       <div class="container">
-        <div class="flex justify-between relative">
+        <div class="relative flex justify-between">
           <div class="px-5">
-            <a href="#home" class="font-bold text-lg text-violet block py-6"> Eko Prasetiyo</a>
+            <a href="#home" class="block py-6 text-lg font-bold text-violet"> Eko Prasetiyo</a>
           </div>
           <div class="flex items-center px-4 pb-0">
-            <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-              <span class="hamburger-line transi duration-300 ease-in-out origin-top-left"></span>
+            <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+              <span class="hamburger-line transi origin-top-left duration-300 ease-in-out"></span>
               <span class="hamburger-line transi duration-300 ease-in-out"></span>
-              <span class="hamburger-line transi duration-300 ease-in-out origin-bottom-left"></span>
+              <span class="hamburger-line transi origin-bottom-left duration-300 ease-in-out"></span>
             </button>
 
-            <nav id="nav-menu" class="hidden absolute py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <nav id="nav-menu" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-3 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:bg-hitam dark:shadow-slate-400 lg:dark:bg-transparent">
               <ul class="block lg:flex">
                 <li class="group">
-                  <a href="#home" class="text-base font-semibold text-hitam py-2 mx-8 flex group-hover:text-violet">Beranda</a>
+                  <a href="#home" class="mx-8 flex py-2 text-base font-semibold text-hitam group-hover:text-violet dark:text-white">Beranda</a>
                 </li>
                 <li class="group">
-                  <a href="#about" class="text-base font-semibold text-hitam py-2 mx-8 flex group-hover:text-violet">Tentang Saya</a>
+                  <a href="#about" class="mx-8 flex py-2 text-base font-semibold text-hitam group-hover:text-violet dark:text-white">Tentang Saya</a>
                 </li>
                 <li class="group">
-                  <a href="#portfolio" class="text-base font-semibold text-hitam py-2 mx-8 flex group-hover:text-violet"> Portfolio</a>
+                  <a href="#portfolio" class="mx-8 flex py-2 text-base font-semibold text-hitam group-hover:text-violet dark:text-white"> Portfolio</a>
                 </li>
                 <li class="group">
-                  <a href="#contact" class="text-base font-semibold text-hitam py-2 mx-8 flex group-hover:text-violet">Kontak</a>
+                  <a href="#contact" class="mx-8 flex py-2 text-base font-semibold text-hitam group-hover:text-violet dark:text-white">Kontak</a>
                 </li>
+                <li class="flex items-center" >
+                  <div class="flex ml-5" >
+                  <span class="mr-2 text-sm text-hitam dark:line-through dark:text-slate-200">Light</span>
+                  <input type="checkbox" class="hidden" id="dark-toggle" />
+                  <label for="dark-toggle">
+                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-700 dark:bg-white p-1">
+                      <div class="toggle-circle h-4 w-4 rounded-full bg-white dark:bg-hitam transition duration-300 ease-in-out"></div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm text-hitam dark:text-slate-200 ">Dark</span>
+                </li>
+              </div>
               </ul>
             </nav>
           </div>
@@ -49,19 +68,19 @@
 
     <!-- hero section awal -->
 
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-hitam">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-violet md:text-xl">Hallo Semua 🙌, Saya <span class="block font-bold text-hitam text-4xl">Eko Prasetiyo</span></h1>
-            <h2 class="font-medium text-neutral-600 mb-5 text-sm mt-1">Guru Mapel & Operator Sekolah</h2>
-            <p class="font-medium text-neutral-600 mb-10 leading-relaxed">Website ini dibuat menggunakan Tailwindcss, <span class="text-hitam font-semibold">SEMANGAT!!!</span></p>
-            <a href="#contact" class="text-base font-semibold text-white bg-violet py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Hubungi Saya</a>
+            <h1 class="text-base font-semibold text-violet dark:text-white md:text-xl">Hallo Semua 🙌, Saya <span class="block text-4xl font-bold text-hitam">Eko Prasetiyo</span></h1>
+            <h2 class="mb-5 mt-1 text-sm font-medium dark:text-neutral-400 text-neutral-600">Guru Mapel & Operator Sekolah</h2>
+            <p class="mb-10 font-medium leading-relaxed dark:text-neutral-400 text-neutral-600">Website ini dibuat menggunakan Tailwindcss, <span class="font-semibold text-hitam dark:text-neutral-200">SEMANGAT!!!</span></p>
+            <a href="#contact" class="rounded-full bg-violet py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out animate-pulse">Hubungi Saya</a>
           </div>
-          <div class="w-full selft-end px-4 lg:w-1/2">
-            <div class="relative mt-10 lg:mt-0 lg:right-0">
-              <img src="dist/img/eko.png" alt="Eko Prasetiyo" class="max-w-full mx-auto" />
-              <span class="absolute bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+          <div class="selft-end w-full px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:right-0 lg:mt-0">
+              <img src="dist/img/eko.png" alt="Eko Prasetiyo" class="relative mx-auto max-w-full z-10" />
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
                 <svg width="250" height="450" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill="#7C3AED"
@@ -80,23 +99,23 @@
 
     <!-- Tentang saya Awal -->
 
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-hitam">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-10 lg:w-1/2">
-            <h4 class="font-bold uppercase text-violet text-lg mb-3">Tentang Saya</h4>
-            <h3 class="font-bold text-hitam text-3xl mb-5 max-w-md lg:text-4xl">Seorang Guru, Mata Pelajaran Pendidikan Pancasila dan Kewarganegaraan.</h3>
-            <p class="font-medium text-base text-neutral-600 max-w-xl lg:text-lg">
+          <div class="mb-10 w-full px-4 lg:w-1/2">
+            <h4 class="mb-3 text-lg font-bold uppercase text-violet">Tentang Saya</h4>
+            <h3 class="mb-5 max-w-md text-3xl font-bold text-hitam dark:text-white lg:text-4xl">Seorang Guru, Mata Pelajaran Pendidikan Pancasila dan Kewarganegaraan.</h3>
+            <p class="max-w-xl text-base font-medium text-neutral-600 dark:text-neutral-400 lg:text-lg">
               Mengajar Sebagai Guru Tetap Yayasan Pondok Modern Selamat Kendal, Menjabat Sebagai Wakil Kepala Sekolah Bagian Sarana Dan Prasarana, Menjabat Sebagai Proktor Ujian Nasional Tahun 2020, Pembina Ekstra Kulikuler, Menjabat
               Sebagai Wali Kelas, dan Guru Mapel PPKn, dan Operator Sekolah
             </p>
           </div>
           <div class="w-full px-4 lg:w-1/2">
-            <h3 class="font-semibold text-hitam text-2xl mb-4 lg:text-3xl pt-10">Mari Berteman</h3>
-            <p class="font-medium text-base text-neutral-600 mb-6">Silahkan kunjungi link media sosial saya yang berupa youtube, twitter, instagram, dan facebook di bawah ini 👇</p>
+            <h3 class="mb-4 pt-10 text-2xl font-semibold text-hitam lg:text-3xl dark:text-white">Mari Berteman</h3>
+            <p class="mb-6 text-base font-medium dark:text-neutral-400 text-neutral-600">Silahkan kunjungi link media sosial saya yang berupa youtube, twitter, instagram, dan facebook di bawah ini 👇</p>
             <div class="flex items-center justify-end">
               <!-- youtube -->
-              <a href="https://www.youtube.com/c/SatryaWirang" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-red-500 hover:text-white">
+              <a href="https://www.youtube.com/c/SatryaWirang" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-red-500 hover:text-white">
                 <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <title>YouTube</title>
                   <path
@@ -106,7 +125,7 @@
               </a>
 
               <!-- twitter -->
-              <a href="https://www.twitter.com/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-blue-500 hover:text-white">
+              <a href="https://www.twitter.com/" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-blue-500 hover:text-white">
                 <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <title>Twitter</title>
                   <path
@@ -116,7 +135,7 @@
               </a>
 
               <!-- instagram -->
-              <a href="https://www.instagram.com/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-pink-500 hover:text-white">
+              <a href="https://www.instagram.com/" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-pink-500 hover:text-white">
                 <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <title>Instagram</title>
                   <path
@@ -126,7 +145,7 @@
               </a>
 
               <!-- facebook -->
-              <a href="https://www.facebook.com/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-blue-900 hover:text-white">
+              <a href="https://www.facebook.com/" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-blue-900 hover:text-white">
                 <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <title>Facebook</title>
                   <path
@@ -143,118 +162,118 @@
     <!-- Tentang saya akhir -->
 
     <!-- Portfolio Awal -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-300">
+    <section id="portfolio" class="bg-slate-300 pt-36 pb-16 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-violet mb-2">Portfolio</h4>
-            <h2 class="font-bold text-hitam text-3xl mb-4">Galeri e-Sertifikat</h2>
-            <p class="font-medium text-base text-slate-600">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-violet">Portfolio</h4>
+            <h2 class="mb-4 text-3xl font-bold text-hitam dark:text-white">Galeri e-Sertifikat</h2>
+            <p class="text-base font-medium text-slate-600 dark:text-slate-400">
               Kumpulan Sertifikat terbaru 2022 yang di peroleh melalui diklat, pelatihan, seminar, secara online / daring yang diselenggarakan oleh pemerintah maupun lembaga pendidikan swasta.
             </p>
           </div>
         </div>
-        <div class="w-full px-4 flex flex-wrap justify-center">
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+        <div class="flex w-full flex-wrap justify-center px-4">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/1/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/1/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Guru Belajar dan Berbagi Seri Semangat Guru</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Guru Belajar dan Berbagi Seri Semangat Guru</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               KEMAMPUAN NONTEKNIS DALAM ADAPTASI TEKNOLOGI <br />
               Pelatihan yang diselenggarakan oleh : Kementrian Pendidikan, dan Kebudayaan, Riset, dan Teknologi.
             </p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/2/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/2/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Diklat Nasional</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Diklat Nasional</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               Diklat nasional tingkatkan kualitas pembelajaran melalui karya inovatif guru <br />
               yang diselenggarakan oleh : e-guru.id
             </p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/3/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/3/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Menyusun Perangkat Ajar</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Menyusun Perangkat Ajar</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               Diklat "Menyusun Perangkat Ajar pada Kurikulum Merdeka <br />
               yang diselenggarakan oleh : e-guru.id
             </p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/4/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/4/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Asesmen Dalam Kurikulum Merdeka</h3>
-            <p class="text-sm text-slate-600">Diklat "Aktualisasi Asesmen Dalam Kurikulum Merdeka" yang diselenggarakan oleh : e-guru.id</p>
+            <h3 class="text-xl font-semibold text-hitam dark:text-white ">Asesmen Dalam Kurikulum Merdeka</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Diklat "Aktualisasi Asesmen Dalam Kurikulum Merdeka" yang diselenggarakan oleh : e-guru.id</p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/5/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/5/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Diklat 32JP Guru Bisa Menulis</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Diklat 32JP Guru Bisa Menulis</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               Diklat 32JP "guru Bisa Menulis, Naik Pangkat Jadi Mudah" <br />
               yang diselenggarakan oleh : NaikPangkat.com
             </p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/6/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/6/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Diklat Nasional</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Diklat Nasional</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               Diklat Nasional Semangat Guru Kreatif Dalam Memaksimalkan Penggunaan Media Pembelajaran <br />
               yang diselenggarakan oleh : e-guru.id
             </p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/7/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/7/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Diklat Bedah Kurikulum Prototipe</h3>
-            <p class="text-sm text-slate-600">Bedah Kurikulum Prototipe sebagai Pilihan kurikulum dalam Rangka Pemulihan Pembelajaran <br />yang diselenggarakan oleh : e-guru.id</p>
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Diklat Bedah Kurikulum Prototipe</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Bedah Kurikulum Prototipe sebagai Pilihan kurikulum dalam Rangka Pemulihan Pembelajaran <br />yang diselenggarakan oleh : e-guru.id</p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/8/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/8/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Diklat Pemanfaatan Aplikasi Teachmint</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Diklat Pemanfaatan Aplikasi Teachmint</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               Diklat Pemanfaatan Aplikasi Teachmint pada Kurikulum Merdeka <br />
               yang diselenggarakan oleh : Belajar Era Digital
             </p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/9/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/9/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Mini Workshop</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Mini Workshop</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               Belajar Membuat Video Pembelajaran Dengan Powtoon <br />
               yang diselenggarakan oleh : e-guru.id
             </p>
           </div>
-          <div class="mb-12 p-4 md:w-1/2">
-            <div class="rounded-md shadow-md overflow-hidden">
+          <div class="mb-12 p-4 sm:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img src="dist/img/10/1.jpg" alt="seritikat1" class="mb-0.5" width="w-full" />
               <img src="dist/img/10/2.jpg" alt="seritikat1.1" />
             </div>
-            <h3 class="font-semibold text-xl text-hitam">Seminar Online</h3>
-            <p class="text-sm text-slate-600">
+            <h3 class="text-xl font-semibold text-hitam dark:text-white">Seminar Online</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
               Inovasi Pembelajaran Digital dan Interaktif Untuk Meningkatkan Motivasi Belajar Siswa <br />
               yang diselenggarakan oleh : e-guru.id
             </p>
@@ -267,32 +286,32 @@
 
     <!-- contact awal -->
 
-    <section id="contact" class="pt-36 pb-32">
-      <div class="container">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-700">
+      <div class="container md:w-1/2">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-violet mb-2">Kontak</h4>
-            <h2 class="font-bold text-hitam text-3xl mb-4">Hubungi Saya</h2>
-            <p class="font-medium text-base text-slate-600">Silahkan Isi Kolom di bawah ini Untuk Menghubungi Saya ⬇️</p>
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-violet">Kontak</h4>
+            <h2 class="mb-4 text-3xl font-bold text-hitam dark:text-white">Hubungi Saya</h2>
+            <p class="text-base font-medium text-slate-600 dark:text-slate-400">Silahkan Isi Kolom di bawah ini Untuk Menghubungi Saya ⬇️</p>
           </div>
         </div>
         <form action="">
-          <div class="w-full lg:w-2/3 lg:mx-auto">
-            <div class="w-full px-4 mb-8">
+          <div class="w-full lg:mx-auto lg:w-2/3">
+            <div class="mb-8 w-full px-4">
               <label for="name" class="text-base font-bold text-violet">Nama</label>
-              <input type="text" id="name" class="w-full bg-slate-200 text-hitam p-3 rounded-md focus:outline-none focus:ring-violet focus:ring-1 focus:border-violet" />
+              <input type="text" id="name" class="w-full rounded-md bg-slate-200 p-3 text-hitam dark:text-white focus:border-violet focus:outline-none focus:ring-1 focus:ring-violet" />
             </div>
-            <div class="w-full px-4 mb-8">
+            <div class="mb-8 w-full px-4">
               <label for="email" class="text-base font-bold text-violet">Email</label>
-              <input type="email" id="name" class="w-full bg-slate-200 text-hitam p-3 rounded-md focus:outline-none focus:ring-violet focus:ring-1 focus:border-violet" />
+              <input type="email" id="name" class="w-full rounded-md bg-slate-200 p-3 text-hitam dark:text-white focus:border-violet focus:outline-none focus:ring-1 focus:ring-violet" />
             </div>
 
-            <div class="w-full px-4 mb-8">
+            <div class="mb-8 w-full px-4">
               <label for="mail" class="text-base font-bold text-violet">Pesan</label>
-              <input type="text" id="name" class="w-full bg-slate-200 text-hitam p-3 rounded-md focus:outline-none focus:ring-violet focus:ring-1 focus:border-violet" />
+              <input type="text" id="name" class="w-full rounded-md bg-slate-200 p-3 text-hitam dark:text-white focus:border-violet focus:outline-none focus:ring-1 focus:ring-violet" />
             </div>
             <div class="w-full px-4">
-              <button class="text-base font-semibold text-white bg-violet py-3 px8 rounded full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
+              <button class="px8 full w-full rounded bg-violet py-3 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg">Kirim</button>
             </div>
           </div>
         </form>
@@ -306,14 +325,14 @@
     <footer class="bg-hitam pt-24 pb-12">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full mb-12 text-slate-300 font-medium md:w-1/3">
-            <h2 class="font-bold text-xl text-white mb-5">Guru Kreatif</h2>
-            <h3 class="font-bold text-xl mb-3">Eko Prasetiyo</h3>
+          <div class="mb-12 w-full font-medium text-slate-300 md:w-1/3">
+            <h2 class="mb-5 text-xl font-bold text-white">Guru Kreatif</h2>
+            <h3 class="mb-3 text-xl font-bold">Eko Prasetiyo</h3>
 
             <a
               href="https://accounts.google.com/signin/v2/identifier?service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
               target="_blank"
-              class="w-6 h-6 mr-1 float-left rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-red-500 hover:text-white"
+              class="float-left mr-1 flex h-6 w-6 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-red-500 hover:text-white"
             >
               <svg role="img" width="15" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <title>GMAIL</title>
@@ -324,7 +343,7 @@
             </a>
             <p class="">prazex@gmail.com</p>
             <br />
-            <a href="https://goo.gl/maps/uZrSjgVW1sy8RVKC8" target="_blank" class="w-6 h-6 mr-1 float-left rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-green-700 hover:text-white">
+            <a href="https://goo.gl/maps/uZrSjgVW1sy8RVKC8" target="_blank" class="float-left mr-1 flex h-6 w-6 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-green-700 hover:text-white">
               <svg role="img" width="15" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <title>Google Map</title>
                 <path
@@ -336,42 +355,42 @@
             <br />
             <p class="pt-0">Demak</p>
           </div>
-          <div class="w-full mb-12 md:w-1/3">
-            <h3 class="font-semibold text-xl text-white mb-5">Kategori Tulisan</h3>
+          <div class="mb-12 w-full md:w-1/3">
+            <h3 class="mb-5 text-xl font-semibold text-white">Kategori Tulisan</h3>
             <ul class="text-slate-300">
               <li>
-                <a href="#" class="inline-block text-base hover:text-violet mb-3">Biografi</a>
+                <a href="#" class="mb-3 inline-block text-base hover:text-violet">Biografi</a>
               </li>
               <li>
-                <a href="#" class="inline-block text-base hover:text-violet mb-3">Teknologi</a>
+                <a href="#" class="mb-3 inline-block text-base hover:text-violet">Teknologi</a>
               </li>
               <li>
-                <a href="#" class="inline-block text-base hover:text-violet mb-3">Riwayat Hidup</a>
+                <a href="#" class="mb-3 inline-block text-base hover:text-violet">Riwayat Hidup</a>
               </li>
             </ul>
           </div>
-          <div class="w-full mb-12 md:w-1/3">
-            <h3 class="font-semibold text-xl text-white mb-5">Tautan</h3>
+          <div class="mb-12 w-full md:w-1/3">
+            <h3 class="mb-5 text-xl font-semibold text-white">Tautan</h3>
             <ul class="text-slate-300">
               <li>
-                <a href="#home" class="inline-block text-base hover:text-violet mb-3">Beranda</a>
+                <a href="#home" class="mb-3 inline-block text-base hover:text-violet">Beranda</a>
               </li>
               <li>
-                <a href="#about" class="inline-block text-base hover:text-violet mb-3">Tentang Saya</a>
+                <a href="#about" class="mb-3 inline-block text-base hover:text-violet">Tentang Saya</a>
               </li>
               <li>
-                <a href="#portfolio" class="inline-block text-base hover:text-violet mb-3">Portfolio</a>
+                <a href="#portfolio" class="mb-3 inline-block text-base hover:text-violet">Portfolio</a>
               </li>
               <li>
-                <a href="#contact" class="inline-block text-base hover:text-violet mb-3">Kontak</a>
+                <a href="#contact" class="mb-3 inline-block text-base hover:text-violet">Kontak</a>
               </li>
             </ul>
           </div>
         </div>
 
         <!-- youtube -->
-        <div class="w-full pt-10 flex items-center border-t border-slate-700 justify-center mb-5">
-          <a href="https://www.youtube.com/c/SatryaWirang" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-red-500 hover:text-white">
+        <div class="mb-5 flex w-full items-center justify-center border-t border-slate-700 pt-10">
+          <a href="https://www.youtube.com/c/SatryaWirang" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-red-500 hover:text-white">
             <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>YouTube</title>
               <path
@@ -381,7 +400,7 @@
           </a>
 
           <!-- twitter -->
-          <a href="https://www.twitter.com/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-blue-500 hover:text-white">
+          <a href="https://www.twitter.com/" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-blue-500 hover:text-white">
             <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>Twitter</title>
               <path
@@ -391,7 +410,7 @@
           </a>
 
           <!-- instagram -->
-          <a href="https://www.instagram.com/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-pink-500 hover:text-white">
+          <a href="https://www.instagram.com/" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-pink-500 hover:text-white">
             <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>Instagram</title>
               <path
@@ -401,7 +420,7 @@
           </a>
 
           <!-- facebook -->
-          <a href="https://www.facebook.com/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-400 border border-slate-300 hover:bg-blue-900 hover:text-white">
+          <a href="https://www.facebook.com/" target="_blank" class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-400 hover:bg-blue-900 hover:text-white">
             <svg role="img" width="25" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>Facebook</title>
               <path
@@ -410,7 +429,7 @@
             </svg>
           </a>
         </div>
-        <p class="font-medium text-sm text-slate-500 text-center">
+        <p class="text-center text-sm font-medium text-slate-500">
           Dibuat Oleh : <a href="https://instagram.com/" target="_blank" class="font-bold text-violet">Prasetiyo Eko</a> <span class="text-pink-600">❤️</span> , Menggunakan
           <a href="https://tailwindcss.com//" target="_blank" class="font-bold text-blue-500">TailwindCSS</a>
         </p>
@@ -418,6 +437,14 @@
     </footer>
 
     <!-- footer -->
+
+    <!-- t.atas awal -->
+
+    <a href="#home" id="top" class="fixed bottom-4 right-4 z-[9999] flex h-11 w-11 items-center justify-center rounded-full bg-violet opacity-60 hover:animate-bounce">
+      <span class="mt-2 block h-5 w-5 rotate-45 border-t-4 border-l-4"></span>
+    </a>
+
+    <!-- t.atas akhir -->
 
     <script src="dist/js/script.js"></script>
   </body>
