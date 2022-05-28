@@ -7,10 +7,6 @@ module.exports = {
       padding: '16px',
     },
     extend: {
-      colors: {
-        violet: '#8b5cf6',
-        hitam: '#171717',
-      },
       screen: {
         '2x1': '1320px',
       },
